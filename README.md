@@ -110,78 +110,99 @@ Se realiza un análisis descriptivo de los datos, calculando métricas como medi
 
 Así mismo se realiza un análisis de la variable "churn" (evasión)  entre los clientes, el recuento de evasión por variables categóricas y numéricas (cliente_actual/evasión/churn vs genero, Ciudadano_mayor, pareja y dependientes); Variables contractuales (cliente_actual/evasión/churn vs Contrato, metodo_pago y facturacion_sin_papel); Servicios contratados (cliente_actual/evasión/churn vs variedad de servicios contratados); Variables continuas agrupadas por rangos (cliente_actual/evasión/churn vs meses de antigüedad, cargo mensual, y cargo total); y la correlación entre variables (cliente_actual/evasión/churn vs cuenta diaria y cantidad de servicios contratados). 
 
-
 4️⃣**Visualizaciones**
 
 Después de realizar los análisis, se debe transformar los resultados en visualizaciones que ayuden a comprender mejor los patrones y los insights encontrados.
 
-A continuación se presentan unos ejemplos de los contenidos en el análisis, los cuales fueron generados mediante matplotlib y Seaborn.
+Dentro de las opciones que se pueden tomar para realizar gráficos en el presente proyecto podría ser la comparación de la distribución de la evasión de los clientes o Churn, la comparación de la evasión frente al género, a la pareja, a la edad avanzada o a los dependientes económicos. De igual forma se puede comparar la variable de evasión frente al tiempo de contrato, los métodos de pago o la facturación sin papel. Las opciones de realizar gráficos son muy variadas y se deben seleccionar acorde a las preguntas que buscamos responder, en este caso entender el nivel de la alta tasa de evasión que existe actualmente en la empresa, Pues esta está sufriendo una alta tasa de cancelaciones y necesita entender los factores que llevan a la pérdida de clientes. 
+
+Dichos gráficos fueron generados mediante matplotlib y Seaborn.
+
+A continuación se presenta un ejemplo de ellos.
 
  ![1. Distribución de Evasión de Clientes](https://github.com/byfurkation/TelecomX_datos/blob/main/assets/1.%20Distribución%20de%20Evasión%20de%20Clientes%20(Churn).png?raw=true)
 
- ![3. Relación entre Variables Personales y Evasión de Clientes](https://github.com/byfurkation/TelecomX_datos/blob/main/assets/3.%20Relaci%C3%B3n%20entre%20Variables%20Personales%20y%20Evasi%C3%B3n%20de%20Clientes.png?raw=True)
+5️⃣**Informe Final**
 
- ![5. Relación entre Servicios Contratados y Evasión de Clientes](https://github.com/byfurkation/TelecomX_datos/blob/main/assets/5.%20Relaci%C3%B3n%20entre%20Servicios%20Contratados%20y%20Evasi%C3%B3n%20de%20Clientes.png?raw=True)
+Con base en los análisis realizados y los gráficos generados, se debe sintetizar los hallazgos en un informe final, en este caso se ha llevado a cabo dentro de Google Colab, redactando un texto explicando las conclusiones y recomendaciones derivado de la alta tasa de evasión que se enfrenta, para que la empresa pueda tomar acciones frente a este problema.
+
+El informe debe contener:
+
+*Introducción, donde se explique el propósito del análisis para resolver un problema en específico.
+
+* Limpieza y tratamiento de datos, dode se describe los pasos realizados para importar, limpiar y procesar los datos.
+
+* Análisis Exploratorio de Datos: Presenta los análisis realizados, incluyendo gráficos y visualizaciones para identificar patrones.
+
+* Conclusiones.
+
+* Recomendaciones.
+
+6️⃣**Análisis de correlación entre variables OPCIONAL** 
+
+Como un paso adicional, puedes explorar la correlación entre diferentes variables del dataset. Esto puede ayudar a identificar qué factores tienen mayor relación con la evasión de clientes, como:
+
+🔹 La relación entre la cuenta diaria y la evasión.
+🔹 Cómo la cantidad de servicios contratados afecta la probabilidad de churn.
+
+Puedes usar la función corr() de Pandas para calcular las correlaciones y visualizar los resultados con gráficos de dispersión o matrices de correlación.
+
+7️⃣ **Ejemplos de gráficos e insights obtenidos del Análisis de correlación entre variables OPCIONAL**
+
+Distribución de Cargo por Día según Estado del Cliente: Respecto de este Rango se puede observar que los clientes con mayor nivel de evasión son aquellos que tuvieron un cargo entre dos y tres de manera diaria. Sin embargo también los clientes activos entran en un Rango muy parecido, desde uno hasta tres de cargo diario.
+
+A continuación se anexa un ejemplo del gráfico relativo a este insight.
 
  ![7. Distribución de Cargo por Día según Estado del Cliente](https://github.com/byfurkation/TelecomX_datos/blob/main/assets/7.%20Distribuci%C3%B3n%20de%20Cargo%20por%20D%C3%ADa%20seg%C3%BAn%20Estado%20del%20Cliente.png?raw=True)
 
-
-5️⃣**Informe Final**
-
-Con base en los análisis realizados y los gráficos generados, se debe sintetizar los hallazgos en un informe final, en este caso se ha llevado a cabo dentro de Google Colab, redactando un texto explicando las conclusiones y recomendaciones derivado de la alta tasa de evasión que se enfrenta.
-
-
-6️⃣**Análisis  OPCIONAL** 
-
-
-
-7️⃣ **Ejemplos de gráficos e insights obtenidos del desempeño geográfico OPCIONAL**
-
-
 ## 3 Ejemplos de gráficos e insights obtenidos
 
+A continuación se ejemplifican gráficos e insights incluidos en el informe final, en el Notebook de Jupyter. Siendo ejemplo de esto los análisis relativos al análisis de ingreso total por tienda, ingreso por categoría Y productos más vendidos. 
 
+Ejemplo 1: 
 
-**Análisis de Ingresos Totales** 💸
+**Distribución de evasión o Churn**
 
+En este paso, el objetivo es comprender cómo está distribuida la variable "churn" (evasión), misma que ha sido guardada bajo el nombre de cliente_ actual y cliente_ activo, entre los clientes. Se Utilizaron gráficos para visualizar la proporción de clientes que permanecieron y los que se dieron de baja.
 
-**Conclusión:** 
+ ![1. Distribución de Evasión de Clientes](https://github.com/byfurkation/TelecomX_datos/blob/main/assets/1.%20Distribución%20de%20Evasión%20de%20Clientes%20(Churn).png?raw=true)
 
+Ejemplo 2:
 
-**Distribución por Categorías de Productos**
+**Relación entre Variables Contractuales y Evasión de Clientes**
 
+El análisis revela que los **contratos** que son pagados mes con mes están fuertemente asociados con la evasión, mientras que los contratos de uno y dos años muestran la mejor retención. Los** métodos de pago automáticos** (tarjeta de crédito y transferencia bancaria) correlacionan con menor evasión comparado con cheques electrónicos, los cuáles representan el nivel mayor de evasores en este método de pago, probablemente se deba a alguna dificultad en el proceso de pago lo cual esté frustrando a los clientes y los lleve a querer dejar la compañía, por lo cual se recomienda investigar más a fondo en ese tema. **La facturación electrónica sin papel** se asocia con mayor retención de clientes.
 
-**Conclusión:** 
+![4. Relación entre Variables Contractuales y Evasión de Clientes](https://github.com/byfurkation/TelecomX_datos/blob/main/assets/4.%20Relaci%C3%B3n%20entre%20Variables%20Contractuales%20y%20Evasi%C3%B3n%20de%20Clientes.png?raw=True)
 
+Ejemplo 3: 
 
+**Servicios Contratados**
 
-**Productos Más Vendidos**
+Los clientes que utilizan servicios básicos de internet sin servicios adicionales muestran las mayores tasas de evasión. En contraste, aquellos con servicios complementarios como seguridad online, respaldo online y protección de dispositivos presentan mejor retención. El soporte técnico aparece como un factor neutro, mientras que los servicios de streaming (TV y películas) muestran patrones mixtos de retención.
 
-
-**Conclusión:**: 
-
-
+![5. Relación entre Servicios Contratados y Evasión de Clientes](https://github.com/byfurkation/TelecomX_datos/blob/main/assets/5.%20Relaci%C3%B3n%20entre%20Servicios%20Contratados%20y%20Evasi%C3%B3n%20de%20Clientes.png?raw=True)
 
 ## 4 Acceso al proyecto 
 
-Para Acceder al proyecto se necesita ingresar al repositorio alojado en Git Hub en la siguiente url: [https://github.com/byfurkation/telecomx](https://github.com/byfurkation/TelecomX_datos), dónde se deberá hacer clic sobre el archivo de nombre "AluraStoreLatam.ipynb".
+Para Acceder al proyecto se necesita ingresar al repositorio alojado en Git Hub en la siguiente url: [https://github.com/byfurkation/telecomx](https://github.com/byfurkation/TelecomX_datos), dónde se deberá hacer clic sobre el archivo de nombre "TelecomX_LATAM.ipynb".
 
-![acceso_1](https://github.com/byfurkation/Allura_store/blob/main/assets/7_acceso.png?raw=true)
+![9. ruta_1](https://github.com/byfurkation/TelecomX_datos/blob/main/assets/9.%20ruta_1.png?raw=true)
 
 Al ingresar a la siguiente ventana nos encontraremos con lo siguiente, teniendo dos opciones para acceder al proyecto, la primera, será dar clic en la parte superior derecha en el botón que tiene una flecha hacia abajo para descargar el archivo y recuperarlo desde nuestra carpeta de descargas predeterminada, para posteriormente ir a la página https://colab.research.google.com/, o como segunda opción, dar clic sobre las letras que dicen "open in colab", lo cual nos llevará directamente al Notebook de Júpiter en Google colab. 
 
-![acceso_1](https://github.com/byfurkation/Allura_store/blob/main/assets/7_acceso_2.png)
+![10. ruta_2](https://github.com/byfurkation/TelecomX_datos/blob/main/assets/10.%20ruta_2.png?raw}=true)
 
 Si hemos seleccionado Descargar el proyecto podemos subirlo a Google Drive Y desde ahí vincularlo con Google Colab, para lo cual será necesario tener una cuenta de Google. Otra manera de subirlo será poniendo el link del repositorio, directamente en Google colab, o por último si lo hemos descargado subirlo desde la sección  "Subir", lo cual nos permitirá Buscar en nuestros archivos de nuestra computadora. 
 
-![colab](https://github.com/byfurkation/Allura_store/blob/main/assets/8_colab_.png)
+![11. ruta_3](https://github.com/byfurkation/TelecomX_datos/blob/main/assets/11.%20ruta_3.png?raw=true)
 
 ## 5 Instrucciones para ejecutar el notebook
 
 Una vez dentro del proyecto encontraremos secciones de código, las cuales estando dentro de ellas, podremos ejecutarlo mediante la presión de los botones "shift" + "enter" o con el botón de Play que aparece a la izquierda del código. De esta manera si alguien quiere agregar código para realizar algún cálculo se puede llevar a cabo dentro de estas celdas o generar nuevas para correr otro código diferente, en el presente se utiliza python. 
 
 ## 6 Tecnologías utilizadas
-* Python. Pandas y Matplotlib, para llevar a cabo ETL. 
+* Python. Pandas y Matplotlib, Seaborn para llevar a cabo ETL. 
 * Jupiter Notebook en Google Colab.
 * Github.
 
