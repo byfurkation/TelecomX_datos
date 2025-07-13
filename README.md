@@ -128,7 +128,7 @@ Con base en los análisis realizados y los gráficos generados, se debe sintetiz
 
 El informe debe contener:
 
-*Introducción, donde se explique el propósito del análisis para resolver un problema en específico.
+* Introducción, donde se explique el propósito del análisis para resolver un problema en específico.
 
 * Limpieza y tratamiento de datos, dode se describe los pasos realizados para importar, limpiar y procesar los datos.
 
