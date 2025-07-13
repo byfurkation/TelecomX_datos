@@ -13,9 +13,9 @@
 
 - [3 Ejemplos de gráficos e insights obtenidos](#3-Ejemplos-de-gráficos-e-insights-obtenidos)
 
-- [4 Acceso al proyecto](#acceso-al-proyecto)
+- [4 Acceso al proyecto](#4-Acceso-al-proyecto)
 
-- [5 Instrucciones para ejecutar el notebook](#4-Instrucciones-para-ejecutar-el-notebook) 
+- [5 Instrucciones para ejecutar el notebook](#5-Instrucciones-para-ejecutar-el-notebook) 
 
 - [6 Tecnologías utilizadas](#6-tecnologías-utilizadas)
 
