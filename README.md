@@ -1,12 +1,7 @@
-# TelecomX_datos
-Desafío utilizando ETL, generación de gráficos e informe.
+![portada challenge](https://github.com/byfurkation/TelecomX_datos/blob/main/assets/portada%20challenge.png?raw=true)
 
-
-![Allura Store Banner](https://github.com/byfurkation/Allura_store/blob/main/assets/banner.png?raw=true)
-
-
-# <h1 align="center"> Allura Store - en Python </h1>
-## <h1 align="center"> Análisis de datos para tienda alura y decisiones estratégicas </h1>
+# <h1 align="center"> TelecomX_datos - en Python </h1>
+## <h1 align="center"> Desafío utilizando ETL, generación de gráficos e informe. </h1>
 
 ![Static Badge](https://img.shields.io/badge/Data%20Analysis-Python-brightgreen?style=flat-square)
 
@@ -27,24 +22,20 @@ Desafío utilizando ETL, generación de gráficos e informe.
 - [7 Autor](#7-autor)
 
 ## 1 El propósito del análisis realizado
-En este caso práctico, se plantea 
 
-Para dicho fin se necesita: 
-* Cargar y manipular datos CSV con la biblioteca Pandas.
+Has sido contratado como asistente de análisis de datos en Telecom X y formarás parte del proyecto "Churn de Clientes". La empresa enfrenta una alta tasa de cancelaciones y necesita comprender los factores que llevan a la pérdida de clientes.
 
-* Crear visualizaciones de datos con la biblioteca Matplotlib.
-
-* Analizar métricas como ingresos, reseñas y rendimiento de ventas.
+Tu desafío será recopilar, procesar y analizar los datos, utilizando Python y sus principales bibliotecas para extraer información valiosa. A partir de tu análisis, el equipo de Data Science podrá avanzar en modelos predictivos y desarrollar estrategias para reducir la evasión.
 
 **Requisitos:**
 
-* Analizar datos de la tienda.
+✅ Importar y manipular datos desde una API de manera eficiente.
 
-* Evaluar información como los ingresos, las categorías más vendidas, las reseñas de los clientes, los productos más vendidos y el envío promedio.
+✅ Aplicar los conceptos de ETL (Extracción, Transformación y Carga) en la preparación de los datos.
 
-* Crear gráficos para visualización, mínimo de 3 gráficos diferentes, que pueden incluir gráficos de barras, circulares, de dispersión y otros.
+✅ Crear visualizaciones estratégicas para identificar patrones y tendencias.
 
-* Enviar una recomendación: Después del análisis, escriba un texto explicando a qué tienda debería vender el Sr. João y por qué, basándose en los datos presentados.
+✅ Realizar un Análisis Exploratorio de Datos (EDA) y generar un informe con insights relevantes.
 
 ## 2 La estructura del proyecto y organización de los archivos
 
@@ -52,28 +43,61 @@ Para llevar a cabo el presente análisis, se puede dividir en las siguientes eta
 
 1️⃣ **Extracción de datos**
 
-Los datos de cada tienda están disponibles en archivo JSON
+Los datos están disponibles en archivo JSON, y será necesario aplicarle una normalización a los datos en múltiples columnas.
 
 2️⃣ **Explorar el conjunto de datos**
 
-Es esencial explorar el conjunto de datos para comprender su estructura y contenido. Este paso permite identificar patrones, inconsistencias y las columnas más relevantes para los siguientes pasos.
+Ahora que has extraído los datos, es fundamental comprender la estructura del dataset y el significado de sus columnas. Esta etapa te ayudará a identificar qué variables son más relevantes para el análisis de evasión de clientes.
 
-El conjunto de datos se estructura de la siguiente forma: 
+📌 Para facilitar este proceso, se creó un diccionario de datos con la descripción de cada columna, mismo que se encuentra en el repositorio bajo el nombre de "TelecomX_diccionario.md".
 
-* Producto y Categoría: Artículos vendidos y sus calificaciones.
-* Precio y Envío: Valores de venta y costos asociados.
-* Fecha y ubicación de compra: Información temporal y geográfica.
-* Evaluación de compra: Comentarios de clientes.
-* Tipo de Pago y Cuotas: Métodos utilizados por los clientes.
-* Coordenadas Geográficas: Ubicación de las transacciones. 
+**Diccionario de datos**
 
-Una vez hecha esta exploración, nos permite comprender cuáles son las probables primeras actividades que necesitamos para cumplir el objetivo de nuestro análisis.
+customerID: número de identificación único de cada cliente
+
+Churn: si el cliente dejó o no la empresa
+
+gender: género (masculino y femenino)
+
+SeniorCitizen: información sobre si un cliente tiene o no una edad igual o mayor a 65 años
+
+Partner: si el cliente tiene o no una pareja
+
+Dependents: si el cliente tiene o no dependientes
+
+tenure: meses de contrato del cliente
+
+PhoneService: suscripción al servicio telefónico
+
+MultipleLines: suscripción a más de una línea telefónica
+
+InternetService: suscripción a un proveedor de internet
+
+OnlineSecurity: suscripción adicional de seguridad en línea
+
+OnlineBackup: suscripción adicional de respaldo en línea
+
+DeviceProtection: suscripción adicional de protección del dispositivo
+
+TechSupport: suscripción adicional de soporte técnico, menor tiempo de espera
+
+StreamingTV: suscripción de televisión por cable
+
+StreamingMovies: suscripción de streaming de películas
+
+Contract: tipo de contrato
+
+PaperlessBilling: si el cliente prefiere recibir la factura en línea
+
+PaymentMethod: forma de pago
+
+Charges.Monthly: total de todos los servicios del cliente por mes
+
+Charges.Total: total gastado por el cliente
 
 3️⃣**Análisis de Datos**
 
-Se procede a realizar el análisis de las principales categorías de relevancia para determinar qué tienda debe de vender el señor Juan. Para este efecto se analizarán las siguientes columnas de los datos.
-
-
+Se procede a realizar el análisis de las principales categorías de relevancia para determinar qué acciones tomar debido a la alta tasa de cancelaciones y comprender los factores que llevan a la pérdida de clientes. 
 
 4️⃣**Visualizaciones**
 
@@ -82,8 +106,7 @@ Después de realizar los análisis, se debe transformar los resultados en visual
 
 5️⃣**Informe Final**
 
-Con base en los análisis realizados y los gráficos generados, se debe sintetizar los hallazgos en un informe final, en este caso se ha llevado a cabo dentro de Google Colab, redactando un texto explicando a qué **tienda debe vender el Sr. Juan**, teniendo en cuenta todos los factores analizados, como:
-
+Con base en los análisis realizados y los gráficos generados, se debe sintetizar los hallazgos en un informe final, en este caso se ha llevado a cabo dentro de Google Colab, redactando un texto explicando las conclusiones y recomendaciones derivado de la alta tasa de evasión que se enfrenta.
 
 
 6️⃣**Análisis  OPCIONAL** 
@@ -119,7 +142,7 @@ Con base en los análisis realizados y los gráficos generados, se debe sintetiz
 
 ## 4 Acceso al proyecto 
 
-Para Acceder al proyecto se necesita ingresar al repositorio alojado en Git Hub en la siguiente url: https://github.com/byfurkation/Allura_store, dónde se deberá hacer clic sobre el archivo de nombre "AluraStoreLatam.ipynb".
+Para Acceder al proyecto se necesita ingresar al repositorio alojado en Git Hub en la siguiente url: [https://github.com/byfurkation/telecomx](https://github.com/byfurkation/TelecomX_datos), dónde se deberá hacer clic sobre el archivo de nombre "AluraStoreLatam.ipynb".
 
 ![acceso_1](https://github.com/byfurkation/Allura_store/blob/main/assets/7_acceso.png?raw=true)
 
