@@ -51,57 +51,79 @@ Ahora que has extraído los datos, es fundamental comprender la estructura del d
 
 📌 Para facilitar este proceso, se creó un diccionario de datos con la descripción de cada columna, mismo que se encuentra en el repositorio bajo el nombre de "TelecomX_diccionario.md".
 
-**Diccionario de datos**
+**Columnas más relevantes**
 
-customerID: número de identificación único de cada cliente
+🎯 Objetivo asumido:
 
-Churn: si el cliente dejó o no la empresa
+Analizar y predecir el "Churn" (si un cliente se va o se queda)
 
-gender: género (masculino y femenino)
+tenure (meses de contrato)
+🧠 Relevancia: Refleja el tiempo de permanencia. Clientes con menor tenure son más propensos a irse.
 
-SeniorCitizen: información sobre si un cliente tiene o no una edad igual o mayor a 65 años
+🧪 Análisis: Puedes hacer histogramas, segmentaciones, correlaciones con Churn.
 
-Partner: si el cliente tiene o no una pareja
+Contract (tipo de contrato: mensual, anual...)
+🧠 Relevancia: Clientes con contrato mes a mes tienden a irse más fácilmente.
 
-Dependents: si el cliente tiene o no dependientes
+📊 Ideal para gráficos de barras o análisis de riesgo.
 
-tenure: meses de contrato del cliente
+PaymentMethod (forma de pago)
+💳 Pagos automáticos vs. manuales podrían influir.
 
-PhoneService: suscripción al servicio telefónico
+🎯 A menudo se asocia a abandono por fricción en pagos.
 
-MultipleLines: suscripción a más de una línea telefónica
+Charges.Monthly y Charges.Total
+💵 Clientes con cargos más altos pueden estar menos satisfechos.
 
-InternetService: suscripción a un proveedor de internet
+También pueden indicar uso intensivo (más fidelidad).
 
-OnlineSecurity: suscripción adicional de seguridad en línea
+Útiles para crear grupos de riesgo por gasto.
 
-OnlineBackup: suscripción adicional de respaldo en línea
+InternetService y servicios relacionados:
+InternetService, OnlineSecurity, OnlineBackup, DeviceProtection, TechSupport, StreamingTV, StreamingMovies
 
-DeviceProtection: suscripción adicional de protección del dispositivo
+🧠 Estos servicios son opcionales y reflejan nivel de compromiso y satisfacción.
 
-TechSupport: suscripción adicional de soporte técnico, menor tiempo de espera
+Algunos modelos han demostrado que la combinación de servicios influye fuertemente en la retención.
 
-StreamingTV: suscripción de televisión por cable
+PaperlessBilling
+📥 Puede parecer menor, pero se ha encontrado correlación entre este tipo de facturación y cancelación: refleja preferencia por lo digital y menos fricción al cambiar de proveedor.
 
-StreamingMovies: suscripción de streaming de películas
+PhoneService y MultipleLines
+🔁 Relacionados con fidelización: clientes que contratan más de un servicio tienden a quedarse más.
 
-Contract: tipo de contrato
+⚖️ Variables demográficas (prioridad media)
 
-PaperlessBilling: si el cliente prefiere recibir la factura en línea
+Estas no siempre son predictoras fuertes, pero pueden dar contexto:
 
-PaymentMethod: forma de pago
+SeniorCitizen: Algunos estudios muestran que personas mayores son más estables en sus servicios.
 
-Charges.Monthly: total de todos los servicios del cliente por mes
+Partner y Dependents: Pueden reflejar estabilidad o necesidad de varios servicios.
 
-Charges.Total: total gastado por el cliente
+gender: Usualmente no es significativa para Churn por sí sola, pero puede considerarse por completitud.
 
 3️⃣**Análisis de Datos**
 
 Se procede a realizar el análisis de las principales categorías de relevancia para determinar qué acciones tomar debido a la alta tasa de cancelaciones y comprender los factores que llevan a la pérdida de clientes. 
 
+Se realiza un análisis descriptivo de los datos, calculando métricas como media, mediana, desviación estándar y otras medidas que ayuden a comprender mejor la distribución y el comportamiento de los clientes, del cual se logra obtener información sobre la permanencia en meses, cargos mensuales, cargos totales y cargo por día; ya que son las variables numéricas, susceptibles de aplicárceles el método de describe. 
+
+Así mismo se realiza un análisis de la variable "churn" (evasión)  entre los clientes, el recuento de evasión por variables categóricas y numéricas (cliente_actual/evasión/churn vs genero, Ciudadano_mayor, pareja y dependientes); Variables contractuales (cliente_actual/evasión/churn vs Contrato, metodo_pago y facturacion_sin_papel); Servicios contratados (cliente_actual/evasión/churn vs variedad de servicios contratados); Variables continuas agrupadas por rangos (cliente_actual/evasión/churn vs meses de antigüedad, cargo mensual, y cargo total); y la correlación entre variables (cliente_actual/evasión/churn vs cuenta diaria y cantidad de servicios contratados). 
+
+
 4️⃣**Visualizaciones**
 
 Después de realizar los análisis, se debe transformar los resultados en visualizaciones que ayuden a comprender mejor los patrones y los insights encontrados.
+
+A continuación se presentan unos ejemplos de los contenidos en el análisis, los cuales fueron generados mediante matplotlib y Seaborn.
+
+ ![1. Distribución de Evasión de Clientes](https://github.com/byfurkation/TelecomX_datos/blob/main/assets/1.%20Distribución%20de%20Evasión%20de%20Clientes%20(Churn).png?raw=true)
+
+ ![3. Relación entre Variables Personales y Evasión de Clientes](https://github.com/byfurkation/TelecomX_datos/blob/main/assets/3.%20Relaci%C3%B3n%20entre%20Variables%20Personales%20y%20Evasi%C3%B3n%20de%20Clientes.png?raw=True)
+
+ ![5. Relación entre Servicios Contratados y Evasión de Clientes](https://github.com/byfurkation/TelecomX_datos/blob/main/assets/5.%20Relaci%C3%B3n%20entre%20Servicios%20Contratados%20y%20Evasi%C3%B3n%20de%20Clientes.png?raw=True)
+
+ ![7. Distribución de Cargo por Día según Estado del Cliente](https://github.com/byfurkation/TelecomX_datos/blob/main/assets/7.%20Distribuci%C3%B3n%20de%20Cargo%20por%20D%C3%ADa%20seg%C3%BAn%20Estado%20del%20Cliente.png?raw=True)
 
 
 5️⃣**Informe Final**
